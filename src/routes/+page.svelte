@@ -10,7 +10,7 @@
     </LinkButton>
 {/snippet}
 
-<div class="flex flex-col justify-center items-center gap-5">
+<div class="min-h-screen flex flex-col justify-center items-center gap-5">
     <h1>ツール集</h1>
 
     {@render drawLink("/radix-conversion", "/icons/light/conversion.svg", "/icons/dark/conversion.svg", "conversion", "基数変換")}
