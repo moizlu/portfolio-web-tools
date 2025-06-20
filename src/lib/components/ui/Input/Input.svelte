@@ -9,7 +9,7 @@
 
 </script>
 
-<div class="relative mt-3">
+<div class="relative mt-3 w-full">
     <input {id} placeholder=" " class={[className, "peer p-2 border-1 border-accent"]} {...props} />
     <label for={id} class="absolute pointer-events-none left-3 -top-3 px-1
                            -z-1 peer-focus:z-1 not-peer-placeholder-shown:z-1

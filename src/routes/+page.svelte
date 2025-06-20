@@ -1,6 +1,8 @@
 <script lang="ts">
     import LinkButton from "$lib/components/ui/LinkButton/LinkButton.svelte";
     import Icon from "$lib/components/ui/Icon/Icon.svelte";
+
+    import Input from "$lib/components/ui/Input/Input.svelte";
 </script>
 
 {#snippet drawLink(href: string, lightSrc: string, darkSrc: string, alt: string, name: string)}
@@ -10,8 +12,7 @@
     </LinkButton>
 {/snippet}
 
-<div class="min-h-screen flex flex-col justify-center items-center gap-5">
+<div class="min-h-screen w-200 flex flex-col justify-center items-center gap-5">
     <h1>ツール集</h1>
-
     {@render drawLink("/radix-conversion", "/icons/light/conversion.svg", "/icons/dark/conversion.svg", "conversion", "基数変換")}
 </div>

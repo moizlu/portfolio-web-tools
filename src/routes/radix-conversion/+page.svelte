@@ -26,23 +26,27 @@
         if ((!currentRadixItem) || (!currentRadixItem.input)) { return; }
 
         currentRadixItem.input.value = currentRadixItem.input.value.replace(currentRadixItem.regExp, ''); // 入力値のバリデーション
-        if (isNaN(parseInt(currentRadixItem.input.value, currentRadixItem.base))) {
+
+        let value = currentRadixItem.input.value;
+        value = (value.endsWith('.')) ? `${value}0` : value;
+
+        const decValue = parseInt(value, currentRadixItem.base);
+        console.log(decValue);
+        if (isNaN(decValue)) {
             radixes.forEach((radixItem) => radixItem.input!.value = "");
             return;
         }
 
-        const decValue = parseInt(currentRadixItem.input.value, currentRadixItem.base); // 入力値を10進数に変換
-
         for (const radixItem of radixes) {
-            if (!radixItem.input) { continue;}
+            if (!radixItem.input) { continue; }
 
-            radixItem.input.value = decValue.toString(radixItem.base);
+            radixItem.input.value = decValue.toString(radixItem.base).toUpperCase();
         }
     };
 </script>
 <div class="min-h-screen flex flex-col justify-center items-center gap-3">
     {#each radixes as radixItem}
         <!-- TODO:画面幅に合わせるようにする(なんか効かない) -->
-        <Input {oninput} placeholder={`${radixItem.base}進数`} type="text" class="radix-conversion-input max-[365px]:w-50 w-75 sm:w-150 lg:w-200" />
+        <Input {oninput} placeholder={`${radixItem.base}進数`} type="text" class="radix-conversion-input w-50" />
     {/each}
 </div>

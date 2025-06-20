@@ -23,7 +23,7 @@
 </svelte:head>
 
 <Header />
-<div class="min-h-screen min-w-screen">
+<div class="min-h-screen">
 	{@render children()}
 </div>
 <Footer />
